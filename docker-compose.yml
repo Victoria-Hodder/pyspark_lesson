@@ -15,3 +15,14 @@ services:
 
     volumes:
       - ./exercise_files:/app/exercise_files
+      - ./mycode:/app/mycode
+
+    depends_on:
+      - database
+
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: etl_pipeline
