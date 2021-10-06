@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  # This is the name of the service you run in terminal
+  # sudo docker-compose up python-tests
+  python-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # The infinite loop ensures the dockerfile keeps running
+    command: "python -c 'while True: pass'"
+
+    container_name: pyspark_container
+
+    volumes:
+      - ./exercise_files:/app/exercise_files
