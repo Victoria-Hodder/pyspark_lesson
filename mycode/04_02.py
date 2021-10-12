@@ -1,7 +1,7 @@
 # Import required libraries
-import pyspark
 import helpers
 import pandas
+from sqlalchemy import create_engine
 
 # Create spark session
 spark = helpers.get_spark_session()
