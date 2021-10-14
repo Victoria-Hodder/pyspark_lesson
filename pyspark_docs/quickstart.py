@@ -13,4 +13,13 @@ df = spark.createDataFrame([
 
 # df.show()
 # df.printSchema()
-print(df.columns)
+# print(df.columns)
+
+## returns column instance
+# print(df.a)
+
+## df.select() takes column instances and returns another dataframe
+# df.select(df.c).show()
+
+## df.filter() selects a subset of rows
+df.filter(df.a == 2).show()
