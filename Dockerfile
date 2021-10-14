@@ -16,7 +16,7 @@ WORKDIR /app
 
 COPY requirements.txt /app
 COPY exercise_files /app/exercise_files
-
 COPY mycode /app/mycode
+COPY pyspark_docs /app/pyspark_docs
 
 RUN pip install -r requirements.txt

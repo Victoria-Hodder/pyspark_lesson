@@ -16,15 +16,4 @@ services:
     volumes:
       - ./exercise_files:/app/exercise_files
       - ./mycode:/app/mycode
-
-    depends_on:
-      - database
-
-  database:
-    image: postgres
-    restart: always
-    environment:
-      # POSTGRES_PASSWORD is required for you to use the PostgreSQL image
-      POSTGRES_PASSWORD: example
-      # POSTGRES_DB defines a different name for the default database
-      POSTGRES_DB: etl_pipeline
+      - ./pyspark_docs:/app/pyspark_docs
