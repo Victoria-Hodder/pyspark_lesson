@@ -1,7 +1,8 @@
 from pyspark.sql import SparkSession
 from datetime import datetime, date
 from pyspark.sql import Row
-from pyspark.sql.functions import upper, lower
+from pyspark.sql.functions import upper, lower, pandas_udf
+import pandas
 
 
 spark = SparkSession.builder.getOrCreate()
@@ -12,7 +13,7 @@ df = spark.createDataFrame([
     Row(a=4, b=5., c='string3', d=date(2000, 3, 1), e=datetime(2000, 1, 3, 12, 0))
 ])
 
-df.show()
+# df.show()
 # df.printSchema()
 # print(df.columns)
 # print(df.rows)
@@ -30,7 +31,7 @@ df.show()
 # print(df.a)
 
 ## df.select() takes column instances and returns another dataframe
-# df.select(df.c).show()
+df.select(df.c).show()
 
 ## df.filter() selects a subset of rows
 # df.filter(df.a == 2).show()
