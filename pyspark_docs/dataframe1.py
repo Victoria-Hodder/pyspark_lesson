@@ -4,7 +4,7 @@ from pyspark.sql import Row
 from pyspark.sql.functions import upper, lower, pandas_udf
 import pandas
 
-
+# You can create a PySpark DataFrame from a list of rows
 spark = SparkSession.builder.getOrCreate()
 
 df = spark.createDataFrame([
